@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/* *{margin: 0; padding: 0;}
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff; 
+  }
+
+
+  span{
+    color:var(--blue);
+    
+} */
+    
+.move_img{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.move_img .card{
+    position: relative;
+    width: 300px; height: 450px;
+}
+.move_img .card span{
+    position: absolute;
+    left: calc(100% / 6 * var(--i)); 
+    top: 0;
+    width: calc(100% / 6) ; height: 100%;
+    /* background: blue; */
+}
+/* + 는 바로 밑동생 */
+.move_img .card img{
+    position: absolute;
+    left: 0; top: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+/* nth-child() 모든 자식요소중 N번째 */
+/* nth-of-type(1) 부모의 특정 자식중 N번째 */
+.move_img .card img:nth-of-type(1){
+    opacity: 1;
+}
+.move_img .card span:hover + img{opacity: 1;}
+
+
+/* 이미지 회전  */
+.badge{
+    position: absolute;
+    right: 10%; top: 60%; width: 100px;height: 100px;
+}
+.badge img{width: 100%;}
+
+/* 스와이프 */
+#sec2{position: relative;
+background: #00f;
+height: 100vh;
+color: #fff;}
+#sec2 .title{position: absolute; 
+    left: 10vh;
+}
+#sec2 .title span{}
+
+#sec2 .swiper{}
+#sec2 .swiper .swiper-slide{width: 25%;}
+
+#sec2 .swiper .swiper-slide.s1{width: 50%;}
